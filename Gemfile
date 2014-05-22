@@ -28,3 +28,6 @@ gem 'spring',        group: :development
 
 gem 'citibikenyc'
 
+
+gem 'rails_12factor'
+
