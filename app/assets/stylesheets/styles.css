@@ -14,3 +14,15 @@
 .b_table {
   margin-top: 40px;
 }
+
+.bike_image {
+  height: 100px;
+  width: auto;
+  padding-left: 40px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+.top {
+  text-align: center;
+}
