@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'bikes#index'
-  get '/bikes/annelaure' => 'bikes#annelaure'
-
+  get '/bikes/al' => 'bikes#annelaure'
+  get '/bikes/:id' => 'bikes#near'
 
 end

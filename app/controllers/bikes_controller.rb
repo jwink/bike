@@ -13,6 +13,18 @@ class BikesController < ApplicationController
     @al << all_stations.select {|x| x["id"]==446}
   end
 
+  def near
+    station = params.fetch(:id)
+    all_stations = Citibikenyc.stations["results"]
+    curr_station = all_stations.select {|x| x["id"]==station.to_i}
+    nearby = curr_station[0]["nearbyStations"]
+    @al = []
+    nearby.each do |s|
+      @al << all_stations.select {|x| x["id"] == s["id"].to_i}
+    end
+
+  end
+
 
 
 end
