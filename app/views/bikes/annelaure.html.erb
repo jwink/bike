@@ -1,0 +1,15 @@
+
+<table class="b_table">
+    <tr>
+        <th class="cell">Station</th>
+        <th class="cell">Bikes</th>
+        <th class="cell">Docks</th>
+    </tr>
+    <% @al.each do |station| %>
+        <tr>
+            <td class="cell"><%=station[0]["label"]%></td>
+            <td class="cell"><%=station[0]["availableBikes"]%></td>
+            <td class="cell"><%=station[0]["availableDocks"]%></td>
+        </tr>
+    <% end %>
+</table>
