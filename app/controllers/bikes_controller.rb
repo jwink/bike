@@ -11,6 +11,7 @@ class BikesController < ApplicationController
     @al << all_stations.select {|x| x["id"]==537}
     @al << all_stations.select {|x| x["id"]==352}
     @al << all_stations.select {|x| x["id"]==446}
+    @al << all_stations.select {|x| x["id"]==514}
   end
 
   def near
