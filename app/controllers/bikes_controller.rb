@@ -27,6 +27,7 @@ class BikesController < ApplicationController
   end
 
   def test
+    Station.update_bike_data
     @p = Citibikenyc.stations
   end
 
