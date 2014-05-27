@@ -26,6 +26,10 @@ class BikesController < ApplicationController
 
   end
 
+  def test
+    @p = Citibikenyc.stations
+  end
+
 
 
 end
