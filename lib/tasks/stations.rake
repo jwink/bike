@@ -5,3 +5,4 @@ namespace :stations do
   end
 
 end
+

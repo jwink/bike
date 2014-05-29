@@ -27,8 +27,10 @@ class BikesController < ApplicationController
   end
 
   def test
-    Station.update_bike_data
-    @p = Citibikenyc.stations
+    #Station.update_bike_data
+    #@p = Citibikenyc.stations
+    send_data Station.make_csv_string, filename: "try.csv"
+
   end
 
 
