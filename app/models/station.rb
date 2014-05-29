@@ -11,6 +11,6 @@ class Station < ActiveRecord::Base
                      status: station["status"],
                      last_update: last_update)
     end
-
   end
+
 end
