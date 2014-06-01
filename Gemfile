@@ -31,6 +31,8 @@ gem 'citibikenyc'
 
 gem 'rails_12factor'
 
+gem 'pry'
+
 
 
 
