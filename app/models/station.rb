@@ -35,6 +35,7 @@ class Station < ActiveRecord::Base
         csv << column_names.map {|key| station[key]}
       end
     end
+    UserMailer.send_it(csv_string).deliver
     return csv_string
   end
 

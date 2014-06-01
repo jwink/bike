@@ -3,7 +3,6 @@ class BikesController < ApplicationController
   def index
     all_stations = Citibikenyc.stations["results"]
     @ferry = all_stations.select {|x| x["id"]==514}
-    UserMailer.send_it.deliver
   end
 
   def annelaure
@@ -30,7 +29,8 @@ class BikesController < ApplicationController
   def test
     #Station.update_bike_data
     #@p = Citibikenyc.stations
-    send_data Station.make_csv_string, filename: "try.csv"
+    Station.make_csv_string
+
 
   end
 
