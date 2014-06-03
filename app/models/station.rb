@@ -39,6 +39,28 @@ class Station < ActiveRecord::Base
     return csv_string
   end
 
+  def self.make_csv_label
+    all_station_data = Citibikenyc.stations["results"]
+    column_names = [:id, :label, :latitude, :longitude, :n1, :n2, :n3, :n4, :n5]
+    first_col_names = [:id, :label, :latitude, :longitude]
+    csv_string = CSV.generate do |csv|
+      csv << column_names
+      all_station_data.each do |station|
+        temp_array = []
+        temp_array << first_col_names.map {|key| station[key]}
+        station["nearbyStations"].each do |near_id|
+          temp_array << near_id[:id]
+        end
+        temp_array.flatten!
+        csv << temp_array
+      end
+    end
+    return csv_string
+    #return all_station_data[0]
+  end
+
+
+
 
 end
 

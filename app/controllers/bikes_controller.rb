@@ -14,6 +14,14 @@ class BikesController < ApplicationController
     @al << all_stations.select {|x| x["id"]==514}
   end
 
+  def spike
+    all_stations = Citibikenyc.stations["results"]
+    @all_stations = all_stations.select {|x| x["id"]==537}
+    send_data Station.make_csv_label, :filename => 'labels.csv'
+  end
+
+
+
   def near
     station = params.fetch(:id)
     all_stations = Citibikenyc.stations["results"]
