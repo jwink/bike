@@ -11,8 +11,13 @@ ActiveRecord::Base.establish_connection(
 
 get '/' do
 
-  #x = Stationpoint.all
-  x = Stationpoint.get_files
-  @stationpoints = x[1]
+  Stationpoint.file_loop
+  y=Stationpoint.where(station_id: 514, hour: 19, day_of_week: [1,2,3,4])
+  @x=y.to_json
   erb :index
+end
+
+
+get '/crunch' do
+
 end

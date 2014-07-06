@@ -41,7 +41,7 @@ class Station < ActiveRecord::Base
 
   def self.make_csv_label
     all_station_data = Citibikenyc.stations["results"]
-    column_names = [:id, :label, :latitude, :longitude, :n1, :n2, :n3, :n4, :n5]
+    column_names = [:id, :label, :latitude, :longitude, :n1, :n2, :n3, :n4, :n5, :d1, :d2, :d3, :d4, :d5]
     first_col_names = [:id, :label, :latitude, :longitude]
     csv_string = CSV.generate do |csv|
       csv << column_names
@@ -50,6 +50,9 @@ class Station < ActiveRecord::Base
         temp_array << first_col_names.map {|key| station[key]}
         station["nearbyStations"].each do |near_id|
           temp_array << near_id[:id]
+        end
+        station["nearbyStations"].each do |near_id|
+          temp_array << near_id[:distance]
         end
         temp_array.flatten!
         csv << temp_array

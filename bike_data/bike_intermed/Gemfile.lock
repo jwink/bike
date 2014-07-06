@@ -59,6 +59,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   pg
   pry
   sinatra
