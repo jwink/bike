@@ -14,7 +14,7 @@ class Stationpoint < ActiveRecord::Base
 
   def self.file_loop
     path = "../"
-    for i in 3..3 do
+    for i in 11..11 do
       file = "July#{i}Bikes.csv"
       Stationpoint.get_files(path+file)
     end
